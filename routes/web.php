@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GithubController;
+use \App\Http\Controllers\FindController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,4 @@ use App\Http\Controllers\GithubController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('users', [GithubController::class, 'index']);
+Route::resource('users', GithubController::class)->only(['index', 'show', 'store']);

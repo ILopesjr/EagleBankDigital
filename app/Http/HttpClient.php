@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Http;
 
 class HttpClient
 {
-    public function getRequest($action = "", $query = array(), $headers = array(), $stream = false,  $url = null)
+    public function getRequest($action = "", $query = array(), $url = null)
     {
         if (empty($url)) {
             $url = (string) $this->getDefaultUrl();
