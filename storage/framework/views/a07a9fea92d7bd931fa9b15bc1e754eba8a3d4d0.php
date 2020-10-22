@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-md bg-success">
+<nav class="navbar navbar-expand-md bg-dark">
     <div class="container">
         <a class="navbar-brand" href="https://www.eaglebankdigital.com/">Eagle Bank Digital</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"

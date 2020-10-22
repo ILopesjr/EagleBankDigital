@@ -15,7 +15,5 @@ use \App\Http\Controllers\FindController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [GithubController::class, 'index']);
 Route::resource('users', GithubController::class)->only(['index', 'show', 'store']);

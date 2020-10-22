@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="form-group">
-        <h1 class="h1 text-justify"><img class="al" src="{{$user->avatar_url}}" alt="Avatar"><?= $user->login ?></h1>
+        <h1 class="h1 text-justify"><img class="al img-thumbnail" src="{{$user->avatar_url}}" alt="Avatar"><?= $user->name ?></h1>
     </div>
     <div class="row">
         <table class="table table-striped">

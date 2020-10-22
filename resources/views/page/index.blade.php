@@ -9,11 +9,11 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($collection as $item)
+        @foreach($users as $user)
             <tr>
-                <th scope="row">{{$item->id}}</th>
-                <td><a href="{{route('users.show', $item->login)}}" class="badge badge-secondary">{{$item->login}}</a></td>
-                <td><a href="{{route('users.show', $item->login)}}"><img src="{{$item->avatar_url}}" alt="Avatar"></a></td>
+                <th scope="row">{{$user->id}}</th>
+                <td><a href="{{route('users.show', $user->login)}}" class="badge badge-secondary">{{$user->login}}</a></td>
+                <td><a href="{{route('users.show', $user->login)}}"><img src="{{$user->avatar_url}}" alt="Avatar"></a></td>
             </tr>
         @endforeach
         </tbody>

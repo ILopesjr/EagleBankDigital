@@ -8,11 +8,11 @@
         </tr>
         </thead>
         <tbody>
-        <?php $__currentLoopData = $collection; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <tr>
-                <th scope="row"><?php echo e($item->id); ?></th>
-                <td><a href="<?php echo e(route('users.show', $item->login)); ?>" class="badge badge-secondary"><?php echo e($item->login); ?></a></td>
-                <td><a href="<?php echo e(route('users.show', $item->login)); ?>"><img src="<?php echo e($item->avatar_url); ?>" alt="Avatar"></a></td>
+                <th scope="row"><?php echo e($user->id); ?></th>
+                <td><a href="<?php echo e(route('users.show', $user->login)); ?>" class="badge badge-secondary"><?php echo e($user->login); ?></a></td>
+                <td><a href="<?php echo e(route('users.show', $user->login)); ?>"><img src="<?php echo e($user->avatar_url); ?>" alt="Avatar"></a></td>
             </tr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>

@@ -6,7 +6,7 @@ use App\Http\HttpClient;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Http;
 
 class GithubController extends Controller
 {
@@ -17,10 +17,10 @@ class GithubController extends Controller
      */
     public function index()
     {
-        $collection = new HttpClient();
-        $collection = $collection->getRequest('users');
+        $users = new HttpClient();
+        $users = $users->getRequest('users');
 
-        return view('page.index', ['collection'=>$collection->dados]);
+        return view('page.index', ['users'=>$users->dados]);
     }
 
     /**
@@ -34,15 +34,11 @@ class GithubController extends Controller
         $login = "users/{$request->userLogin}";
         $repository = "users/{$request->userLogin}/repos";
 
-//        dd($login, $repository);
-
         $user = new HttpClient();
         $user = $user->getRequest($login);
 
         $repositories = new  HttpClient();
         $repositories = $repositories->getRequest($repository);
-
-//        dd($repositories->dados);
 
         return view('page.show', ['user'=>$user->dados, 'repositories'=>$repositories->dados]);
     }
@@ -63,8 +59,6 @@ class GithubController extends Controller
 
         $repositories = new  HttpClient();
         $repositories = $repositories->getRequest($repository);
-
-//        dd($repositories->dados);
 
         return view('page.show', ['user'=>$user->dados, 'repositories'=>$repositories->dados]);
     }
